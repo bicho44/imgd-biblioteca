@@ -25,12 +25,12 @@ function my_init_function(){
 /**
  * Definir El Custom Post Type
  *
- * @name: Casino
+ * @name: Biblioteca
  * @dependencies: Piklist
  */
-add_filter('piklist_post_types', 'casino_post_type');
+add_filter('piklist_post_types', 'biblioteca_post_type');
 
-function casino_post_type($post_types)
+function biblioteca_post_type($post_types)
 {
     $singular = 'Libro';
     $plural = 'Bibliografía';
@@ -45,12 +45,12 @@ function casino_post_type($post_types)
                 'add_new_item'       => __( 'Agregue un nuevo '.$singular, 'imgd' ),
                 'new_item'           => __( 'Nuevo '.$singular, 'imgd' ),
                 'edit_item'          => __( 'Edite el '.$singular, 'imgd' ),
-                'view_item'          => __( 'Ver '.$singular, 'imgd' ),
-                'all_items'          => __( 'Todos los '.$plural, 'imgd' ),
-                'search_items'       => __( 'Buscar '.$plural, 'imgd' ),
+                'view_item'          => __( 'Ver el '.$singular, 'imgd' ),
+                'all_items'          => __( 'Toda la '.$plural, 'imgd' ),
+                'search_items'       => __( 'Buscar en la '.$plural, 'imgd' ),
                 'parent_item_colon'  => __( $singular.' Pariente:', 'imgd' ),
-                'not_found'          => __( 'No se encontraron '.$singular, 'imgd' ),
-                'not_found_in_trash' => __( 'No se encontraron '.$singular.' en la Basura.', 'imgd' )
+                'not_found'          => __( 'No se encontró el '.$singular, 'imgd' ),
+                'not_found_in_trash' => __( 'No se encontró el '.$singular.' en la Basura.', 'imgd' )
             )
         ,'type' => 'page'
         ,'title' => __('Ingrese un nuevo '.$singular, 'imgd')
@@ -70,7 +70,7 @@ function casino_post_type($post_types)
         )
     ,'menu_position'=>20
     ,'edit_columns' => array(
-            'title' => __($plural, 'imgd')
+            'title' => __($singular, 'imgd')
         )
     ,'hide_meta_box' => array(
             'slug'
