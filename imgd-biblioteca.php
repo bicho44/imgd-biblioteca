@@ -59,6 +59,7 @@ function biblioteca_post_type($post_types)
         ,'has_archive' => __('biblioteca','imgd')
         ,'menu_icon' => 'dashicons-book'
         ,'page_icon' => 'dashicons-book-alt'
+        ,'show_in_rest' => true
         ,'rewrite' => array(
             'slug' => __('libro', 'imgd')
         )
