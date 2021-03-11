@@ -3,7 +3,7 @@
 Title: Archivo del Libro
 Post Type: imgd_biblioteca
 Description: Archivo del Libro 
-Order: 3
+Order: 5
 Context: side
 */
 

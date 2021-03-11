@@ -3,7 +3,7 @@
 Title: Imagenes Personalizada
 Post Type: imgd_biblioteca
 Description: Estas imágenes van a ser usadas en el SlideShow de cada página. en el caso de haberlos
-Order: 3
+Order: 10
 Context: side
 */
 
