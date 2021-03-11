@@ -55,7 +55,7 @@ function biblioteca_post_type($post_types)
         ,'type' => 'page'
         ,'title' => __('Ingrese un nuevo '.$singular, 'imgd')
         ,'public' => true
-        ,'capability_type' => 'page'
+        ,'capability_type' => 'post'
         ,'has_archive' => __('biblioteca','imgd')
         ,'menu_icon' => 'dashicons-book'
         ,'page_icon' => 'dashicons-book-alt'
