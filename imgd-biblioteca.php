@@ -129,9 +129,9 @@ function show_book() {
 
   var_dump($urldelArchivo);
 
-  if (!empty($urldelArchivo)) {
-    $book  ='<a href="'.$urldelArchivo.'" >';
-    $book .=$urldelArchivo;
+  if (!empty($urldelArchivo[0])) {
+    $book  ='<a href="'.$urldelArchivo[0].'" class="btn" >';
+    $book .=$urldelArchivo[0];
     $book .="</a>";
   }
 
