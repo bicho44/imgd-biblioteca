@@ -9,7 +9,7 @@ Context: side
 
 piklist('field', array(
     'type' => 'file'
-    ,'field' => 'archivo_libro' // Use these field to match WordPress featured images.
+    ,'field' => 'archivo_libro'
     ,'scope' => 'post_meta'
     ,'options' => array(
         'title' => __('Archivo del Libro', 'imgd')

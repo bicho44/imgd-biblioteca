@@ -121,7 +121,20 @@ function libro_categoria($taxonomies)
 
 }
 
+// Add Shortcode
+function show_book() {
+  $book = "";
 
+  $urldelArchivo = get_post_meta(get_the_ID(), 'archivo_libro');
 
+  if (!empty($urldelArchivo)) {
+    $book  ='<a href="'.$urldelArchivo.'" >';
+    $book .=$urldelArchivo;
+    $book .="</a>";
+  }
+
+  return $book;
+}
+add_shortcode( 'showBook', 'show_book' );
 
 ?>
