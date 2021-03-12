@@ -122,16 +122,20 @@ function libro_categoria($taxonomies)
 }
 
 // Add Shortcode
-function show_book() {
+function show_book($postID) {
   $book = "";
 
-  $urldelArchivo = get_post_meta(get_the_ID(), 'archivo_libro');
+  if (!$postID) {
+    $postID = get_the_ID();
+  }
+
+  $urldelArchivo = get_post_meta($postID, 'archivo_libro');
 
   var_dump($urldelArchivo);
 
   if (!empty($urldelArchivo[0])) {
     $book  ='<a href="'.$urldelArchivo[0].'" class="btn" >';
-    $book .=$urldelArchivo[0];
+    $book .='Descargar Archivo'.$urldelArchivo[0].'ID: '.$postID;
     $book .="</a>";
   }
 
