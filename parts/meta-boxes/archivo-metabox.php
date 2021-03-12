@@ -2,7 +2,7 @@
 /*
 Title: Archivo del Libro
 Post Type: imgd_biblioteca
-Description: Archivo del Libro 
+Description: Meta Box del Archivo del Libro que guarda la URL del mismo
 Order: 5
 Context: side
 */
