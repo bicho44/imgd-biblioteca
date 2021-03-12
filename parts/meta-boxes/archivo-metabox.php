@@ -14,6 +14,7 @@ piklist('field', array(
     ,'options' => array(
         'title' => __('Archivo del Libro', 'imgd')
         ,'button' => __('Inserte Archivo', 'imgd')
+        ,'save' => 'url'
         ,'basic' => true
     )
 ));

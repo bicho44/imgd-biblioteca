@@ -131,7 +131,7 @@ function show_book($postID) {
 
   $urldelArchivo = get_post_meta($postID, 'archivo_libro');
 
-  var_dump($urldelArchivo);
+  piklist::pre($urldelArchivo);
 
   if (!empty($urldelArchivo[0])) {
     $book  ='<a href="'.$urldelArchivo[0].'" class="btn" >';
