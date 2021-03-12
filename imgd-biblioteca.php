@@ -3,7 +3,7 @@
 Plugin Name: IMGD Biblioteca
 Plugin URI: https://github.com/bicho44/imgd-biblioteca
 Description: Pequeño plug-in para biblioteca de datos
-Version: 1.10
+Version: 1.11
 Author: Federico Reinoso
 Author URI: https://imgdigital.com.ar
 Plugin Type: Piklist
@@ -140,7 +140,7 @@ function show_book($postID) {
   //piklist::pre($urldelArchivo);
 
   if (!empty($urldelArchivo[0])) {
-    $book  ='<a href="'.$urldelArchivo[0].'" class="btn" >';
+    $book  ='<a href="'.$urldelArchivo[0].'" class="el-content uk-button uk-button-default" >';
     $book .='Descargar Archivo';
     $book .="</a>";
   }
