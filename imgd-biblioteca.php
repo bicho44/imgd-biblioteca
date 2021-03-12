@@ -127,6 +127,8 @@ function show_book() {
 
   $urldelArchivo = get_post_meta(get_the_ID(), 'archivo_libro');
 
+  var_dump($urldelArchivo);
+
   if (!empty($urldelArchivo)) {
     $book  ='<a href="'.$urldelArchivo.'" >';
     $book .=$urldelArchivo;
