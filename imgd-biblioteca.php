@@ -2,8 +2,8 @@
 /*
 Plugin Name: IMGD Biblioteca
 Plugin URI: https://github.com/bicho44/imgd-biblioteca
-Description: Pequeño plug-in para biblioteca de datos
-Version: 1.15
+Description: Pequeño plug-in para biblioteca de Libros en AchBiom
+Version: 1.22
 Author: Federico Reinoso
 Author URI: https://imgdigital.com.ar
 Plugin Type: Piklist
@@ -21,6 +21,58 @@ function my_init_function(){
    }
   }
 }
+
+
+
+/**
+ * Definir Taxonomía del Custom Post Type, tiene que estar antes para poder modificar los permalinks correctamente
+ *
+ * @name: IMGD Categoria del Libro
+ * @dependencies: Piklist
+ */
+
+add_filter('piklist_taxonomies', 'libro_categoria');
+
+function libro_categoria($taxonomies)
+{
+  $labels = array(
+    'name' => _x( 'Categorías de los Libros', 'taxonomy general name' ),
+    'singular_name' => _x( 'Categoría Libro', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Buscar en Categorías' ),
+    'all_items' => __( 'Todas las Categorías' ),
+    'parent_item' => __( 'Categoría Padre' ),
+    'parent_item_colon' => __( 'Categoría Padre:' ),
+    'edit_item' => __( 'Editar Categoría del Libro' ), 
+    'update_item' => __( 'Actualizar Categoría del Libro' ),
+    'add_new_item' => __( 'Agregar una nueva Categoría del Libro' ),
+    'new_item_name' => __( 'Nueva Categoría del Libro' ),
+    'menu_name' => __( 'Categorías de los Libros' ),
+  );
+
+    $taxonomies[] = array(
+        'post_type' => 'imgd_biblioteca'
+        ,'name' => 'imgd_libro_categoria'
+        ,'show_admin_column' => true
+        ,'configuration' => array(
+            'hierarchical' => true
+            ,'description' =>__('Categorias que ayudan a ordenar los libros de la Biblioteca', 'imgd')
+            ,'labels' => $labels
+            ,'hide_meta_box' => false
+            ,'show_ui' => true
+            ,'show_admin_column' => true
+            ,'query_var' => true
+            ,'show_in_rest' => true
+            ,'rest_base' => 'libro_categoria'
+            ,'rewrite' => array(
+                    'slug' => __('cat-libro', 'imgd')
+                )
+            )
+    );
+    
+    return $taxonomies;
+
+}
+
 
 /**
  * Definir El Custom Post Type
@@ -88,52 +140,6 @@ function biblioteca_post_type($post_types)
 }
 
 
-/**
- * Definir Taxonomía del Custom Post Type
- *
- * @name: IMGD Categoria del Libro
- * @dependencies: Piklist
- */
-
-add_filter('piklist_taxonomies', 'libro_categoria');
-
-function libro_categoria($taxonomies)
-{
-  $labels = array(
-    'name' => _x( 'Categorías de los Libros', 'taxonomy general name' ),
-    'singular_name' => _x( 'Categoría Libro', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Buscar en Categorías' ),
-    'all_items' => __( 'Todas las Categorías' ),
-    'parent_item' => __( 'Categoría Padre' ),
-    'parent_item_colon' => __( 'Categoría Padre:' ),
-    'edit_item' => __( 'Editar Categoría del Libro' ), 
-    'update_item' => __( 'Actualizar Categoría del Libro' ),
-    'add_new_item' => __( 'Agregar una nueva Categoría del Libro' ),
-    'new_item_name' => __( 'Nueva Categoría del Libro' ),
-    'menu_name' => __( 'Categorías de los Libros' ),
-  );
-
-    $taxonomies[] = array(
-        'post_type' => 'imgd_biblioteca'
-        ,'name' => 'imgd_libro_categoria'
-        ,'show_admin_column' => true
-        ,'configuration' => array(
-            'hierarchical' => true
-            ,'labels' => $labels
-            ,'hide_meta_box' => false
-            ,'show_ui' => true
-            ,'query_var' => true
-            ,'show_in_rest' => true
-            ,'rest_base' => 'libro_categoria'
-            ,'rewrite' => array(
-                    'slug' => __('cat-libro', 'imgd')
-                )
-            )
-    );
-    
-    return $taxonomies;
-
-}
 
 /**
  * ShortCode: Show Book
