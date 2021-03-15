@@ -99,13 +99,27 @@ add_filter('piklist_taxonomies', 'libro_categoria');
 
 function libro_categoria($taxonomies)
 {
+  $labels = array(
+    'name' => _x( 'Categorías de los Libros', 'taxonomy general name' ),
+    'singular_name' => _x( 'Categoría Libro', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Buscar en Categorías' ),
+    'all_items' => __( 'Todas las Categorías' ),
+    'parent_item' => __( 'Categoría Padre' ),
+    'parent_item_colon' => __( 'Categoría Padre:' ),
+    'edit_item' => __( 'Editar Categoría del Libro' ), 
+    'update_item' => __( 'Actualizar Categoría del Libro' ),
+    'add_new_item' => __( 'Agregar una nueva Categoría del Libro' ),
+    'new_item_name' => __( 'Nueva Categoría del Libro' ),
+    'menu_name' => __( 'Categorías de los Libros' ),
+  );
+
     $taxonomies[] = array(
         'post_type' => 'imgd_biblioteca'
         ,'name' => 'imgd_libro_categoria'
         ,'show_admin_column' => true
         ,'configuration' => array(
-            'hierarchical' => false
-            ,'labels' => piklist('taxonomy_labels', __('Categoría del Libro', 'imgd'))
+            'hierarchical' => true
+            ,'labels' => $labels
             ,'hide_meta_box' => false
             ,'show_ui' => true
             ,'query_var' => true
