@@ -3,7 +3,7 @@
 Plugin Name: IMGD Biblioteca
 Plugin URI: https://github.com/bicho44/imgd-biblioteca
 Description: Pequeño plug-in para biblioteca de Libros en AchBiom
-Version: 1.23
+Version: 1.25
 Author: Federico Reinoso
 Author URI: https://imgdigital.com.ar
 Plugin Type: Piklist
@@ -69,6 +69,40 @@ function libro_categoria($taxonomies)
             )
     );
     
+    $labels = array(
+      'name' => _x( 'Etiquetas de los Libros', 'taxonomy general name' ),
+      'singular_name' => _x( 'Etiqueta Libro', 'taxonomy singular name' ),
+      'search_items' =>  __( 'Buscar en Etiquetas' ),
+      'all_items' => __( 'Todas las Etiquetas' ),
+      'parent_item' => __( 'Etiqueta Padre' ),
+      'parent_item_colon' => __( 'Etiqueta Padre:' ),
+      'edit_item' => __( 'Editar Etiqueta del Libro' ), 
+      'update_item' => __( 'Actualizar Etiqueta del Libro' ),
+      'add_new_item' => __( 'Agregar una nueva Etiqueta del Libro' ),
+      'new_item_name' => __( 'Nueva Etiqueta del Libro' ),
+      'menu_name' => __( 'Etiquetas de los Libros' ),
+    );
+  
+      $taxonomies[] = array(
+          'post_type' => 'imgd_biblioteca'
+          ,'name' => 'imgd_libro_etiqueta'
+          ,'show_admin_column' => true
+          ,'configuration' => array(
+              'hierarchical' => false
+              ,'description' =>__('Etiquetas que ayudan a agrupar los libros de la Biblioteca', 'imgd')
+              ,'labels' => $labels
+              ,'hide_meta_box' => false
+              ,'show_ui' => true
+              ,'show_admin_column' => true
+              ,'query_var' => true
+              ,'show_in_rest' => true
+              ,'rest_base' => 'libro_etiqueta'
+              ,'rewrite' => array(
+                      'slug' => __('libro/etiqueta', 'imgd')
+                  )
+              )
+      );
+      
     return $taxonomies;
 
 }
