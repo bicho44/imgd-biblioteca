@@ -209,7 +209,7 @@ function show_book($postID) {
   return $book;
 }
 add_shortcode( 'showBook', 'show_book' );
-
-//include ('calc_bio/index.php');
+// Incluir la calculadora
+include ('calc_bio/index.php');
 
 ?>
