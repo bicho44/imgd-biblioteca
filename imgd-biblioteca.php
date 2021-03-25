@@ -210,4 +210,6 @@ function show_book($postID) {
 }
 add_shortcode( 'showBook', 'show_book' );
 
+//include ('calc_bio/index.php');
+
 ?>
