@@ -15,7 +15,7 @@ function get_calc_potencias(){
 
   $results = $wpdb->get_results($sql);
 
-  $out = __('0 results', 'imgd');
+  $out = _x('No hay datos', 'imgd');
 
     if ($results) {
       // output data of each row
@@ -58,7 +58,7 @@ function get_calc_combustibles(){
 
   $results = $wpdb->get_results($sql);
 
-  $out = __('0 results', 'imgd');
+  $out = _x('No hay datos', 'imgd');
 
     if ($results) {
       // output data of each row
@@ -97,12 +97,12 @@ function calc_combustibles(){
 function get_calc_calderas(){
 
   global $wpdb;
-  
+
   $sql = "SELECT * FROM uso_caldera;";
 
   $results = $wpdb->get_results($sql);
 
-  $out = __('0 results', 'imgd');
+  $out = _x('No hay datos', 'imgd');
 
   if ($results) {
     // output data of each row
