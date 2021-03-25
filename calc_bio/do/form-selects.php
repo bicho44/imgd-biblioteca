@@ -1,6 +1,6 @@
 <?php
 
-global $wpdb;
+
 /**
  * Get Calc_Potencias
  * 
@@ -10,7 +10,7 @@ global $wpdb;
  * 
  */
 function get_calc_potencias(){
-
+  global $wpdb;
   $sql = 'SELECT * FROM potencia;';
 
   $results = $wpdb->get_results($sql);
@@ -52,6 +52,7 @@ function calc_potencias(){
  * 
  */
 function get_calc_combustibles(){
+  global $wpdb;
 
   $sql = 'SELECT * FROM combustibles;';
 
@@ -95,6 +96,8 @@ function calc_combustibles(){
  */
 function get_calc_calderas(){
 
+  global $wpdb;
+  
   $sql = "SELECT * FROM uso_caldera;";
 
   $results = $wpdb->get_results($sql);
