@@ -1,5 +1,6 @@
 <?php
 
+global $wpdb;
 /**
  * Get Calc_Potencias
  * 
