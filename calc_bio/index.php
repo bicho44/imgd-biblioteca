@@ -5,40 +5,39 @@ function showCalculadora(){
 
     $form = '<form action="#" class="wpcf7-form init">';
 
-        $form .='<label for="combustibles">
-        Tipo de Combustible a reemplazar:
+        $form .='<label for="combustibles"> Tipo de Combustible a reemplazar: <br />
         <span class="wpcf7-form-control-wrap">'
             .get_calc_combustibles().
             '</span></label>';
 
-        $form .='<label for="potencias">Potencia: 
+        $form .='<label for="potencias">Potencia: <br />
             <span class="wpcf7-form-control-wrap">'
             .get_calc_potencias().
             '</span></label>';
 
 
-        $form .='<label for="caldera">Uso de la caldera: 
+        $form .='<label for="caldera">Uso de la caldera:<br />
                 <span class="wpcf7-form-control-wrap">'
                 .get_calc_calderas().
                 '</span>
             </label>';
 
 
-        $form .='<label for="precio">Precio de Combustible a reemplazar:
+        $form .='<label for="precio">Precio de Combustible a reemplazar:<br />
                     <span class="wpcf7-form-control-wrap">
-                        <input type="text" id="precio" class="wpcf7-form-control wpcf7-select" aria-required="true" aria-invalid="false"/>
+                        <input type="text" id="precio" class="wpcf7-form-control wpcf7-text" aria-required="true" aria-invalid="false"/>
                     </span>
                 </label>';
 
-        $form .='<label for="horas">Horas de uso anuales:
+        $form .='<label for="horas">Horas de uso anuales:<br />
                 <span class="wpcf7-form-control-wrap"> 
-                <input type="text" id="horas" />
+                <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
                 </span></label>';
 
         $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular','imgd').'" onclick="goResultados();"/>';
 
     $form .='</form>';
-    
+
     return $form;
 }
 
