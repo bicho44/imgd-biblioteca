@@ -1,12 +1,10 @@
 <?php
 include_once 'do/form-selects.php';
 
-global $wpdb;
-
-
 function showCalculadora(){
 
 ?>
+<form>
     <script type="text/javascript" src="bio.js"></script>
     <table>
         <tr>
@@ -57,7 +55,7 @@ function showCalculadora(){
 
 
     </table>
-
+</form>
 <?php } 
 
 add_shortcode( 'showCalculadora', 'showCalculadora' );
