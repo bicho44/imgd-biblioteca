@@ -1,7 +1,8 @@
 <?php
-//include_once './config.php';
+include_once 'do/form-select.php';
 
 global $wpdb;
+
 
 function showCalculadora(){
 
