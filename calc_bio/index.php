@@ -3,7 +3,11 @@ include_once 'do/form-selects.php';
 
 function showCalculadora(){
 
-    $form = '<form action="#" class="wpcf7-form init">';
+    // Bio JS
+    wp_register_script('img_calc_bio',  'bio.js', false, null, false);
+
+
+    $form = '<form action="GET" class="wpcf7-form init">';
 
         $form .='<label for="combustibles"> Tipo de Combustible a reemplazar: <br />
         <span class="wpcf7-form-control-wrap">'
@@ -34,7 +38,7 @@ function showCalculadora(){
                 <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
                 </span></label>';
 
-        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular','imgd').'" onclick="goResultados();"/>';
+        $form .='<input type="submit" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular','imgd').'" onclick="goResultados();"/>';
 
     $form .='</form>';
 

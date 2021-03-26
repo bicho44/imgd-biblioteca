@@ -3,7 +3,9 @@ include_once './config.php';
 include_once './func.php';
 ?>
 <input type="button" value="Regresar" onclick="  window.history.back();" />
+
 <h2>TECNOLOGIA ACTUAL</h2>
+
 <table border="1">
     <tr>
         <td>Tipo de Combustible a reemplazar</td>
@@ -212,14 +214,8 @@ include_once './func.php';
             }
             ?>
         </td>
-        
-        
     </tr>
-    
-    
-    
-    
-        <tr>
+    <tr>
         <td> <b>Reducción anual de Gases de Efecto Invernadero (t CO2eq/año)</b></td>
         <td> </td>
         <td>
@@ -263,7 +259,4 @@ include_once './func.php';
             ?>
         </td>
     </tr> 
-
-
-
 </table>
