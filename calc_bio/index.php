@@ -6,8 +6,8 @@ function showCalculadora(){
     // Bio JS
     wp_register_script('img_calc_bio',  'bio.js', false, null, false);
 
-
-    $form = '<form action="" method="get" class="wpcf7-form init">';
+    $form ='<script type="text/javascript" src="bio.js"></script>';
+    $form .= '<form action="" method="get" class="wpcf7-form init">';
 
         $form .='<label for="combustibles"> Tipo de Combustible a reemplazar: <br />
         <span class="wpcf7-form-control-wrap">'
