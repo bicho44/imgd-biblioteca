@@ -4,9 +4,9 @@ include_once 'do/form-selects.php';
 function showCalculadora(){
 
     // Bio JS
-    wp_register_script('img_calc_bio',  'bio.js', false, null, false);
+    wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'calc_bio/bio.js', false, null, false);
 
-    $form ='<script type="text/javascript" src="bio.js"></script>';
+    $form ='<script type="text/javascript" src="'.plugin_dir_url( __FILE__ ).'calc_bio/bio.js'.'"></script>';
     $form .= '<form action="" method="get" class="wpcf7-form init">';
 
         $form .='<label for="combustibles"> Tipo de Combustible a reemplazar: <br />
