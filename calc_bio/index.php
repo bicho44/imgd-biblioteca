@@ -6,7 +6,7 @@ function showCalculadora(){
     // Bio JS
     wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'calc_bio/bio.js', false, null, false);
 
-    $form ='<script type="text/javascript" src="'.plugin_dir_url( __FILE__ ).'calc_bio/bio.js'.'"></script>';
+    $form ='<script type="text/javascript" src="'.plugin_dir_url( __FILE__ )."calc_bio/bio.js".'"></script>';
 
     $form .= '<form action="" method="get" class="wpcf7-form init">';
 
