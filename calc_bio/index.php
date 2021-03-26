@@ -38,7 +38,7 @@ function showCalculadora(){
                 <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
                 </span></label>';
 
-        $form .='<input type="submit" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular','imgd').'" onclick="goResultados();"/>';
+        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular','imgd').'" onclick="goResultados();"/>';
 
     $form .='</form>';
 
