@@ -1,4 +1,4 @@
-function goResultados(){
+function goResultados(url){
     tipo= document.getElementById("combustibles").value;
     potencia= document.getElementById("potencias").value;
     caldera= document.getElementById("calderas").value;
@@ -22,7 +22,7 @@ function goResultados(){
     var caldera_text = e.options[e.selectedIndex].text;
     
     
-    url = "resultados.php?tipo="+tipo+"&potencia="+potencia+"&caldera="
+    url = url+"?tipo="+tipo+"&potencia="+potencia+"&caldera="
             +caldera+"&precio="+precio+"&horas="+horas
             +"&tipo_text="+tipo_text
             +"&potencia_text="+potencia_text

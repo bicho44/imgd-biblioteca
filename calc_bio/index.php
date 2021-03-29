@@ -2,7 +2,16 @@
 include_once 'do/form-selects.php';
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-function showCalculadora(){
+function showCalculadora($atts = [], $content = null, $tag = '' ) {
+        // normalize attribute keys, lowercase
+        $atts = array_change_key_case( (array) $atts, CASE_LOWER );
+     
+        // override default attributes with user attributes
+        $calc_atts = shortcode_atts(
+            array(
+                'urlResultados' => 'resultados',
+            ), $atts, $tag
+        );
 
     // Bio JS
     wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'bio.js', false, null, false);
@@ -40,7 +49,7 @@ function showCalculadora(){
                 <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
                 </span></label>';
 
-        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular','imgd').'" onclick="goResultados();"/>';
+        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular','imgd').'" onclick="goResultados('.$calc_atts["urlResultados"].');"/>';
 
     $form .='</form>';
 
