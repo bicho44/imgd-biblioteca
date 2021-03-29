@@ -25,7 +25,7 @@ function goResultados(urlbio){
     var caldera_text = e.options[e.selectedIndex].text;
     
     
-    url = `/${urlbio}/?tipo=${tipo}&potencia=${potencia}&caldera=${caldera}&precio=${precio}&horas=${horas}&tipo_text=${tipo_text}&potencia_text=${potencia_text}&caldera_text=${caldera_text}`;
+    url = `${urlbio}/?tipo=${tipo}&potencia=${potencia}&caldera=${caldera}&precio=${precio}&horas=${horas}&tipo_text=${tipo_text}&potencia_text=${potencia_text}&caldera_text=${caldera_text}`;
     
     document.location = url;
 }
