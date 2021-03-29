@@ -63,14 +63,16 @@ $resultados .='
     CUADRO COMPARATIVO </h2>
 
 <table border="1">
+            <thead>
     <tr>
-        <td> <b>Combustible</b></td>
-        <td> '.$_GET["tipo_text"].'</td>
-        <td> Pellet</td>
-        <td> Astilla seca < 25%</td>
-        <td> Astilla húmeda > 25%</td>
-        <td> Biomasa triturada</td>
-    </tr>    
+        <th> <b>Combustible</b></th>
+        <th> '.$_GET["tipo_text"].'</th>
+        <th> Pellet</th>
+        <th> Astilla seca < 25%</th>
+        <th> Astilla húmeda > 25%</th>
+        <th> Biomasa triturada</th>
+    </tr>   </thead>
+    <tbody>
     <tr>
         <td> <b>Potencia</b></td>
         <td>'.$_GET["potencia_text"].'</td>
@@ -260,6 +262,7 @@ $resultados .='
             $resultados .='
         </td>
     </tr> 
+    </tbody>
 </table>';
 
 return $resultados;
