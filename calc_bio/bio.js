@@ -5,9 +5,12 @@ function goResultados(urlbio){
     precio= document.getElementById("precio").value;
     horas= document.getElementById("horas").value;
     
+    console.log(urlbio);
+
     if ( (precio != "") && (horas !="")){
         
     }else{
+
         alert("¡Por favor, complete toda la información!");
         return;
     }
@@ -22,7 +25,7 @@ function goResultados(urlbio){
     var caldera_text = e.options[e.selectedIndex].text;
     
     
-    url = urlbio+"?tipo="+tipo+"&potencia="+potencia+"&caldera="
+    url = "/"urlbio+"/?tipo="+tipo+"&potencia="+potencia+"&caldera="
             +caldera+"&precio="+precio+"&horas="+horas
             +"&tipo_text="+tipo_text
             +"&potencia_text="+potencia_text
