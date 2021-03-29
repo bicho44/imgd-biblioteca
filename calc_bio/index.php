@@ -23,7 +23,7 @@ function fshowCalculadora($atts) {
         // echo "Calc Atributos: ";
         // print_r($calc_atts);
 
-            $urlResultados = home_url('/').trim($calc_atts["url"]);
+        $urlResultados = home_url($path = '/').trim($calc_atts["url"]);
     // Bio JS
     //wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'bio.js', false, null, false);
 
