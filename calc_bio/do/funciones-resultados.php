@@ -66,6 +66,7 @@ function getK3($c) {
 
 function ahorroEnCombustible($v1, $v2) {
     global $wpdb;
+    
     $sql = "SELECT gasto_anual_en_combustible FROM outputs WHERE ID = '" . $v1 . "'";
     //echo $sql;
 
