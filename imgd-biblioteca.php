@@ -211,5 +211,5 @@ function show_book($postID) {
 add_shortcode( 'showBook', 'show_book' );
 // Incluir la calculadora
 include ('calc_bio/index.php');
-
+include ('calc_bio/resultados.php');
 ?>
