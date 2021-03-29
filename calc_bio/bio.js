@@ -1,19 +1,16 @@
 function goResultados(urlbio){
 
-    console.log(urlbio);
-
     tipo= document.getElementById("combustibles").value;
     potencia= document.getElementById("potencias").value;
     caldera= document.getElementById("calderas").value;
     precio= document.getElementById("precio").value;
     horas= document.getElementById("horas").value;
     
-    console.log(urlbio);
+    if (urlbio==""){
+        urlbio = "resultados";
+    }
 
-    if ( (precio != "") && (horas !="")){
-        
-    }else{
-
+    if ( (precio == "") && (horas =="") ){
         alert("¡Por favor, complete toda la información!");
         return;
     }
