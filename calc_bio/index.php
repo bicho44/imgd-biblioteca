@@ -22,7 +22,7 @@ function fshowCalculadora($atts) {
         // echo "Calc Atributos: ";
         // print_r($calc_atts);
 
-
+            $urlResultados = home_url('/').trim($calc_atts["url"]);
     // Bio JS
     //wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'bio.js', false, null, false);
 
@@ -59,7 +59,7 @@ function fshowCalculadora($atts) {
                 <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
                 </span></label>';
 
-        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados(\''.trim($calc_atts["url"]).'\');"/>';
+        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados(\''.$urlResultados.'\');"/>';
 
     $form .='</form>';
 
