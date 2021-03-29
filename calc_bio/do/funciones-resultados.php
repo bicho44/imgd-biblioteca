@@ -8,7 +8,7 @@ function getEficiencia($c, $f) {
     global $wpdb;
     
     $sql = 'SELECT '. $c .' FROM eficiencia2 WHERE etiqueta LIKE "%'. $f .'%"';
-    echo $sql.'<br />';
+    //echo $sql.'<br />';
 
     //get_row( string|null $query = null, string $output = OBJECT, int $y )
 
@@ -19,7 +19,7 @@ function getEficiencia($c, $f) {
     if ( null !== $results ) {
         //var_dump($results);
         $r = $results[$c];
-        echo 'Resultado'.$r.'<br />';
+        //echo 'Resultado'.$r.'<br />';
       }
 
     return ($r * 100) . "%";
@@ -29,7 +29,7 @@ function getK1($c) {
     global $wpdb;
     $sql = "SELECT id FROM combustibles WHERE combustible LIKE '%" . $c . "%'";
     //echo $sql;
-    $results = $wpdb->get_row($sql);
+    $results = $wpdb->get_row($sql, ARRAY_A);
 
     $r = 0;
 
@@ -46,7 +46,7 @@ function getK3($c) {
 
     $sql = "SELECT id FROM uso_caldera WHERE etiqueta = '" . $c . "'";
     //echo $sql;
-    $results = $wpdb->get_row($sql);
+    $results = $wpdb->get_row($sql, ARRAY_A);
 
     $r = 0;
 
@@ -64,7 +64,7 @@ function ahorroEnCombustible($v1, $v2) {
     $sql = "SELECT gasto_anual_en_combustible FROM outputs WHERE ID = '" . $v1 . "'";
     //echo $sql;
 
-    $results = $wpdb->get_row($sql);
+    $results = $wpdb->get_row($sql, ARRAY_A);
 
     $r1 = 0;
 
@@ -76,7 +76,7 @@ function ahorroEnCombustible($v1, $v2) {
 
     $sql = "SELECT gasto_anual_en_combustible FROM outputs WHERE ID = '" . $v2 . "'";
     //echo $sql;
-    $results = $wpdb->get_row($sql);
+    $results = $wpdb->get_row($sql, ARRAY_A);
 
     $r2 = 0;
 
@@ -96,7 +96,7 @@ function rangoCostoInversion($key) {
 
     $sql = "SELECT rango_de_costos_de_inversion FROM outputs WHERE ID = '" . $key . "'";
     //echo $sql;
-    $results = $wpdb->get_row($sql);
+    $results = $wpdb->get_row($sql, ARRAY_A);
 
     $r = "-";
 
@@ -114,7 +114,7 @@ function recuperacion($key) {
 
     $sql = "SELECT costo_de_inversion_minimo, costo_de_inversion_maximo FROM outputs WHERE ID = '" . $key . "'";
     //echo $sql;
-    $results = $wpdb->get_row($sql);
+    $results = $wpdb->get_row($sql, ARRAY_A);
 
     $r = '-';
 
@@ -133,7 +133,7 @@ function reduccion_gei($v1, $v2) {
 
     $sql = "SELECT reduccion_gei FROM outputs WHERE ID = '" . $v1 . "'";
     //echo $sql;
-    $results = $wpdb->get_row($sql);
+    $results = $wpdb->get_row($sql, ARRAY_A);
     $r1 = 0;
     
     $r2 = 0;
@@ -146,7 +146,7 @@ function reduccion_gei($v1, $v2) {
 
     $sql = "SELECT reduccion_gei FROM outputs WHERE ID = '" . $v2 . "'";
     //echo $sql;
-    $results = $wpdb->get_row($sql);
+    $results = $wpdb->get_row($sql, ARRAY_A);
 
     if ( null !== $results ) {
         // output data of each row
