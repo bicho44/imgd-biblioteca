@@ -3,6 +3,7 @@ include_once 'do/form-selects.php';
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 function showCalculadora($atts = [], $content = null, $tag = '' ) {
+
         // normalize attribute keys, lowercase
         $atts = array_change_key_case( (array) $atts, CASE_LOWER );
      
@@ -49,7 +50,7 @@ function showCalculadora($atts = [], $content = null, $tag = '' ) {
                 <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
                 </span></label>';
 
-        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular','imgd').'" onclick="goResultados("'.trim($calc_atts["urlResultados"]).'");"/>';
+        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados("'.trim($calc_atts["urlResultados"]).'");"/>';
 
     $form .='</form>';
 
