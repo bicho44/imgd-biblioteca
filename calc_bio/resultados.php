@@ -5,7 +5,7 @@ include_once './func.php';
 <input type="button" value="Regresar" onclick="  window.history.back();" />
 
 <h2>TECNOLOGIA ACTUAL</h2>
-
+  
 <table border="1">
     <tr>
         <td>Tipo de Combustible a reemplazar</td>

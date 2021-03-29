@@ -1,5 +1,5 @@
 <?php
-//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 //include_once './config.php';
 
@@ -27,7 +27,7 @@ function getK1($c, $conn) {
     $sql = "SELECT id FROM combustibles WHERE combustible LIKE '%" . $c . "%';";
     //echo $sql;
     $results = $wpdb->get_row($sql);
-    
+
     $r = 0;
 
     if ($results) {

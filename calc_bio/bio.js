@@ -1,4 +1,7 @@
 function goResultados(urlbio){
+
+    console.log(urlbio);
+
     tipo= document.getElementById("combustibles").value;
     potencia= document.getElementById("potencias").value;
     caldera= document.getElementById("calderas").value;
