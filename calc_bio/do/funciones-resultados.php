@@ -27,16 +27,16 @@ function getEficiencia($c, $f) {
 
 function getK1($c) {
     global $wpdb;
-    $sql = "SELECT id FROM combustibles WHERE combustible LIKE '%" . $c . "%';";
+    $sql = "SELECT id FROM combustibles WHERE combustible LIKE '%" . $c . "%'";
     //echo $sql;
     $results = $wpdb->get_row($sql);
 
     $r = 0;
 
-    if ($results) {
+    if ( null !== $results ) {
         // output data of each row
         //$row = $result->fetch_assoc();
-        $r = $row["id"];
+        $r = $results["id"];
     } 
 
     return $r . "";
@@ -44,16 +44,16 @@ function getK1($c) {
 
 function getK3($c) {
 
-    $sql = "SELECT id FROM uso_caldera WHERE etiqueta = '" . $c . "';";
+    $sql = "SELECT id FROM uso_caldera WHERE etiqueta = '" . $c . "'";
     //echo $sql;
     $results = $wpdb->get_row($sql);
 
     $r = 0;
 
-    if ($results) {
+    if ( null !== $results ) {
         // output data of each row
         //$row = $result->fetch_assoc();
-        $r = $row["id"];
+        $r = $results["id"];
     }
 
     return $r;
@@ -61,29 +61,29 @@ function getK3($c) {
 
 function ahorroEnCombustible($v1, $v2) {
     global $wpdb;
-    $sql = "SELECT gasto_anual_en_combustible FROM outputs WHERE ID = '" . $v1 . "';";
+    $sql = "SELECT gasto_anual_en_combustible FROM outputs WHERE ID = '" . $v1 . "'";
     //echo $sql;
 
     $results = $wpdb->get_row($sql);
 
     $r1 = 0;
 
-    if ($results) {
+    if ( null !== $results ) {
         // output data of each row
         //$row = $result->fetch_assoc();
-        $r1 = $row["gasto_anual_en_combustible"];
+        $r1 = $results["gasto_anual_en_combustible"];
     }
 
-    $sql = "SELECT gasto_anual_en_combustible FROM outputs WHERE ID = '" . $v2 . "';";
+    $sql = "SELECT gasto_anual_en_combustible FROM outputs WHERE ID = '" . $v2 . "'";
     //echo $sql;
     $results = $wpdb->get_row($sql);
 
     $r2 = 0;
 
-    if ($results) {
+    if ( null !== $results ) {
         // output data of each row
         //$row = $result->fetch_assoc();
-        $r2 = $row["gasto_anual_en_combustible"];
+        $r2 = $results["gasto_anual_en_combustible"];
     }
 
     return ($r1 - $r2);
@@ -94,16 +94,16 @@ function ahorroEnCombustible($v1, $v2) {
 function rangoCostoInversion($key) {
     global $wpdb;
 
-    $sql = "SELECT rango_de_costos_de_inversion FROM outputs WHERE ID = '" . $key . "';";
+    $sql = "SELECT rango_de_costos_de_inversion FROM outputs WHERE ID = '" . $key . "'";
     //echo $sql;
     $results = $wpdb->get_row($sql);
 
     $r = "-";
 
-    if ($results) {
+    if ( null !== $results ) {
         // output data of each row
         //$row = $result->fetch_assoc();
-        $r = $row["rango_de_costos_de_inversion"];
+        $r = $results["rango_de_costos_de_inversion"];
     }
 
     return $r;
@@ -112,47 +112,46 @@ function rangoCostoInversion($key) {
 function recuperacion($key) {
     global $wpdb;
 
-    $sql = "SELECT costo_de_inversion_minimo, costo_de_inversion_maximo FROM outputs WHERE ID = '" . $key . "';";
+    $sql = "SELECT costo_de_inversion_minimo, costo_de_inversion_maximo FROM outputs WHERE ID = '" . $key . "'";
     //echo $sql;
     $results = $wpdb->get_row($sql);
 
     $r = '-';
 
-    if ($result) {
+    if ( null !== $results ) {
         // output data of each row
         //$row = $result->fetch_assoc();
-        $r = $row["costo_de_inversion_minimo"]."-".$row["costo_de_inversion_maximo"];
+        $r = $results["costo_de_inversion_minimo"]."-".$results["costo_de_inversion_maximo"];
     } 
 
-    return $r . "";
+    return $r;
 }
 
 
 function reduccion_gei($v1, $v2) {
     global $wpdb;
 
-    $sql = "SELECT reduccion_gei FROM outputs WHERE ID = '" . $v1 . "';";
+    $sql = "SELECT reduccion_gei FROM outputs WHERE ID = '" . $v1 . "'";
+    //echo $sql;
+    $results = $wpdb->get_row($sql);
+    $r1 = 0;
+    
+    $r2 = 0;
+
+    if ( null !== $results ) {
+        // output data of each row
+        //$row = $result->fetch_assoc();
+        $r1 = $results["reduccion_gei"];
+    } 
+
+    $sql = "SELECT reduccion_gei FROM outputs WHERE ID = '" . $v2 . "'";
     //echo $sql;
     $results = $wpdb->get_row($sql);
 
-    if ($results) {
+    if ( null !== $results ) {
         // output data of each row
         //$row = $result->fetch_assoc();
-        $r1 = $row["reduccion_gei"];
-    } else {
-        $r1 = "0 results";
-    }
-
-    $sql = "SELECT reduccion_gei FROM outputs WHERE ID = '" . $v2 . "';";
-    //echo $sql;
-    $results = $wpdb->get_row($sql);
-
-    if ($results) {
-        // output data of each row
-        //$row = $result->fetch_assoc();
-        $r2 = $row["reduccion_gei"];
-    } else {
-        $r2 = "0 results";
+        $r2 = $results["reduccion_gei"];
     }
 
     return ($r1 - $r2);
