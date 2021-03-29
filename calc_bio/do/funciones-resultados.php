@@ -3,7 +3,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 //include_once './config.php';
 
-function getEficiencia($c, $f, $conn) {
+function getEficiencia($c, $f) {
 
     global $wpdb;
     
@@ -22,7 +22,7 @@ function getEficiencia($c, $f, $conn) {
     return ($r * 100) . "%";
 }
 
-function getK1($c, $conn) {
+function getK1($c) {
     global $wpdb;
     $sql = "SELECT id FROM combustibles WHERE combustible LIKE '%" . $c . "%';";
     //echo $sql;
@@ -39,7 +39,7 @@ function getK1($c, $conn) {
     return $r . "";
 }
 
-function getK3($c, $conn) {
+function getK3($c) {
 
     $sql = "SELECT id FROM uso_caldera WHERE etiqueta = '" . $c . "';";
     //echo $sql;
@@ -56,7 +56,7 @@ function getK3($c, $conn) {
     return $r;
 }
 
-function ahorroEnCombustible($v1, $v2, $conn) {
+function ahorroEnCombustible($v1, $v2) {
     global $wpdb;
     $sql = "SELECT gasto_anual_en_combustible FROM outputs WHERE ID = '" . $v1 . "';";
     //echo $sql;
@@ -88,7 +88,7 @@ function ahorroEnCombustible($v1, $v2, $conn) {
 
 
 
-function rangoCostoInversion($key, $conn) {
+function rangoCostoInversion($key) {
     global $wpdb;
 
     $sql = "SELECT rango_de_costos_de_inversion FROM outputs WHERE ID = '" . $key . "';";
@@ -106,7 +106,7 @@ function rangoCostoInversion($key, $conn) {
     return $r;
 }
 
-function recuperacion($key, $conn) {
+function recuperacion($key) {
     global $wpdb;
 
     $sql = "SELECT costo_de_inversion_minimo, costo_de_inversion_maximo FROM outputs WHERE ID = '" . $key . "';";
@@ -125,7 +125,7 @@ function recuperacion($key, $conn) {
 }
 
 
-function reduccion_gei($v1, $v2, $conn) {
+function reduccion_gei($v1, $v2) {
     global $wpdb;
 
     $sql = "SELECT reduccion_gei FROM outputs WHERE ID = '" . $v1 . "';";
