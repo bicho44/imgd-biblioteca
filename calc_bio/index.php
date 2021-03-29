@@ -2,14 +2,14 @@
 include_once 'do/form-selects.php';
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-function showCalculadora($atts) {
-        echo "Array de atributos: <br />";        
-        print_r($atts);
+function fshowCalculadora($atts) {
+        // echo "Array de atributos: <br />";        
+        // print_r($atts);
 
         // normalize attribute keys, lowercase
         $atts = array_change_key_case( (array) $atts, CASE_LOWER );
 
-        echo "Atribots desde el shortcode: ".$atts[0]."<br />";
+        //echo "Atribots desde el shortcode: ".$atts[0]."<br />";
 
         // override default attributes with user attributes
         $calc_atts = shortcode_atts(
@@ -17,18 +17,18 @@ function showCalculadora($atts) {
                 'url' => 'resultados',
             ), $atts);
 
-        echo "Atributos puros: ".$atts['url']."<br />";
+        // echo "Atributos puros: ".$atts['url']."<br />";
 
-        echo "Calc Atributos: ";
-        print_r($calc_atts);
+        // echo "Calc Atributos: ";
+        // print_r($calc_atts);
 
 
     // Bio JS
-    wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'bio.js', false, null, false);
+    //wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'bio.js', false, null, false);
 
     $form ='<script type="text/javascript" src="'.plugin_dir_url( __FILE__ )."bio.js".'"></script>';
 
-    $form .= '<form action="" method="get" class="wpcf7-form init">';
+    $form .= '<form action="" method="get" class="wpcf7-form">';
 
         $form .='<label for="combustibles"> Tipo de Combustible a reemplazar: <br />
         <span class="wpcf7-form-control-wrap">'
@@ -66,6 +66,6 @@ function showCalculadora($atts) {
     return $form;
 }
 
-add_shortcode( 'showCalculadora', 'showCalculadora' );
+add_shortcode( 'showCalculadora', 'fshowCalculadora' );
 
 ?>
