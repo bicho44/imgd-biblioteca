@@ -6,7 +6,9 @@ function showCalculadora($atts = [], $content = null, $tag = '' ) {
 
         // normalize attribute keys, lowercase
         $atts = array_change_key_case( (array) $atts, CASE_LOWER );
-     
+
+        echo "Atribots desde lel shortcode: ".$atts['urlResultados']."<br />";
+
         // override default attributes with user attributes
         $calc_atts = shortcode_atts(
             array(
@@ -14,6 +16,8 @@ function showCalculadora($atts = [], $content = null, $tag = '' ) {
             ), $atts, $tag
         );
 
+        echo "Atributos puros: ".$atts['urlResultados']."<br />";
+        echo "Calc Atributos: ".$calc_atts['urlResultados']."<br />";
     // Bio JS
     wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'bio.js', false, null, false);
 
