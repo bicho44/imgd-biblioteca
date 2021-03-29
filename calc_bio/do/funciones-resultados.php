@@ -45,8 +45,8 @@ function getK1($c) {
 
 function getK3($c) {
 
-    $sql = 'SELECT id FROM uso_caldera WHERE etiqueta = "' . $c . '"';
-    
+    $sql = 'SELECT `id` FROM uso_caldera WHERE etiqueta = "' . $c . '"';
+
     echo $sql;
 
     $results = $wpdb->get_row($sql, ARRAY_A);
