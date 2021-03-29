@@ -28,7 +28,7 @@ function getEficiencia($c, $f) {
 function getK1($c) {
     global $wpdb;
 
-    $sql = 'SELECT `id` FROM combustibles WHERE combustible LIKE "%' . $c . '%"';
+    $sql = 'SELECT id FROM combustibles WHERE combustible LIKE "%' . $c . '%"';
     //echo $sql;
     $results = $wpdb->get_row($sql, ARRAY_A);
 
@@ -40,14 +40,14 @@ function getK1($c) {
         $r = $results["id"];
     } 
 
-    return $r . "";
+    return $r;
 }
 
 function getK3($c) {
 
     global $wpdb;
     
-    $sql = 'SELECT `id` FROM uso_caldera WHERE etiqueta = "' . $c . '"';
+    $sql = 'SELECT id FROM uso_caldera WHERE etiqueta = "' . $c . '"';
 
     echo $sql;
 

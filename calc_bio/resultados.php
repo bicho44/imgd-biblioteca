@@ -261,6 +261,9 @@ $resultados .='
         </td>
     </tr> 
 </table>';
+
+return $resultados;
+
 } // end displayResultados
 
 add_shortcode( 'displayResultados', 'fdisplayResultados' );
