@@ -59,7 +59,7 @@ function fshowCalculadora($atts) {
                 <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
                 </span></label>';
 
-        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados("'.trim($calc_atts["url"]).'");"/>';
+        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados(\''.trim($calc_atts["url"]).'\');"/>';
 
     $form .='</form>';
 
