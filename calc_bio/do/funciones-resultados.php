@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+//error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 //include_once './config.php';
 
@@ -49,7 +49,7 @@ function getK3($c) {
     
     $sql = 'SELECT id FROM uso_caldera WHERE etiqueta = "' . $c . '"';
 
-    echo $sql;
+    //echo $sql;
 
     $results = $wpdb->get_row($sql, ARRAY_A);
 
