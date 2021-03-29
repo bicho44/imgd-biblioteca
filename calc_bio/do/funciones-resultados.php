@@ -17,6 +17,7 @@ function getEficiencia($c, $f) {
     $r = 0;
 
     if ( null !== $results ) {
+        var_dump($results);
         $r = $row[$c];
         echo 'Resultado'.$r.'<br />';
       }
