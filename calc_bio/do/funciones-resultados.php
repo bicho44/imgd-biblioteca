@@ -8,8 +8,8 @@ function getEficiencia($c, $f) {
     global $wpdb;
     
     $sql = "SELECT " . $c . " FROM eficiencia2 WHERE etiqueta LIKE '%" . $f . "%';";
-    echo $sql;
-    
+    echo $sql.'<br />';
+
     //get_row( string|null $query = null, string $output = OBJECT, int $y )
 
     $results = $wpdb->get_row($sql, ARRAY_A);
@@ -20,6 +20,7 @@ function getEficiencia($c, $f) {
         // output data of each row
         //$row = $result->fetch_assoc();
         $r = $row[$c];
+        echo 'Resultado'.$r.'<br />';
     } 
 
     return ($r * 100) . "%";
