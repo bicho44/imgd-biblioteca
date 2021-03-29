@@ -5,6 +5,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 function showCalculadora($atts) {
         echo "Array de atributos: <br />";        
         print_r($atts);
+
         // normalize attribute keys, lowercase
         $atts = array_change_key_case( (array) $atts, CASE_LOWER );
 
@@ -13,12 +14,14 @@ function showCalculadora($atts) {
         // override default attributes with user attributes
         $calc_atts = shortcode_atts(
             array(
-                'urlResultados' => 'resultados',
+                'url' => 'resultados',
             ), $atts);
 
-        echo "Atributos puros: ".$atts['urlResultados']."<br />";
+        echo "Atributos puros: ".$atts['url']."<br />";
 
-        echo "Calc Atributos: ".print_r($calc_atts)."<br />";
+        echo "Calc Atributos: ";
+        print_r($calc_atts);
+
 
     // Bio JS
     wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'bio.js', false, null, false);
@@ -56,7 +59,7 @@ function showCalculadora($atts) {
                 <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
                 </span></label>';
 
-        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados("'.trim($calc_atts["urlResultados"]).'");"/>';
+        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados("'.trim($calc_atts["url"]).'");"/>';
 
     $form .='</form>';
 
