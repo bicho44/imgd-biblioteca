@@ -17,7 +17,7 @@ function showCalculadora($atts) {
             ), $atts);
 
         echo "Atributos puros: ".$atts['urlResultados']."<br />";
-        echo "Calc Atributos: ".$calc_atts['urlResultados']."<br />";
+        echo "Calc Atributos: ".print_r($calc_atts)."<br />";
 
     // Bio JS
     wp_register_script('img_calc_bio', plugin_dir_url( __FILE__ ).'bio.js', false, null, false);
