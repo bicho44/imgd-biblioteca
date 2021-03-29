@@ -1,6 +1,6 @@
 <?php
 // include_once './config.php';
- include_once 'do/funciones_resultados.php';
+ include_once 'do/funciones-resultados.php';
 
 function fdisplayResultados (){
     $resultados = '

@@ -1,6 +1,7 @@
 <?php
 include_once 'do/form-selects.php';
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+//error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 function fshowCalculadora($atts) {
         // echo "Array de atributos: <br />";        
