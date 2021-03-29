@@ -8,7 +8,7 @@ function showCalculadora($atts) {
         // normalize attribute keys, lowercase
         $atts = array_change_key_case( (array) $atts, CASE_LOWER );
 
-        echo "Atribots desde lel shortcode: ".$atts['urlResultados']."<br />";
+        echo "Atribots desde el shortcode: ".$atts[0]."<br />";
 
         // override default attributes with user attributes
         $calc_atts = shortcode_atts(
@@ -17,6 +17,7 @@ function showCalculadora($atts) {
             ), $atts);
 
         echo "Atributos puros: ".$atts['urlResultados']."<br />";
+
         echo "Calc Atributos: ".print_r($calc_atts)."<br />";
 
     // Bio JS
