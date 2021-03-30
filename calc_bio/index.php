@@ -66,12 +66,12 @@ function fshowCalculadora($atts) {
 
         $form .='<label for="precio" class="uk-form-label">Precio de Combustible a reemplazar:</label>
                     <div class="uk-margin-small">
-                        <input type="text" id="precio" class="uk-input" aria-required="true" aria-invalid="false"/>
+                        <input type="text" id="precio" class="uk-input" aria-required="true" aria-invalid="false" placeholder="Pesos Chilenos (CLP)"/>
                     </div>';
 
         $form .='<label for="horas" class="uk-form-label">Horas de uso anuales:</label>
                  <div class="uk-margin-small"> 
-                <input type="text" id="horas" class="uk-input" />
+                <input type="text" id="horas" class="uk-input" placeholder="Horas de Uso Anual de este producto"/>
                 </div>';
 
         $form .='<input type="button" class="uk-button uk-button-primary" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados(\''.$urlResultados.'\');"/>';

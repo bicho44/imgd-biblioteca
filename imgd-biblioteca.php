@@ -3,7 +3,7 @@
 Plugin Name: IMGD Biblioteca
 Plugin URI: https://github.com/bicho44/imgd-biblioteca
 Description: Pequeño plug-in para biblioteca de Libros en AchBiom
-Version: 1.35
+Version: 1.4
 Author: Federico Reinoso
 Author URI: https://imgdigital.com.ar
 Plugin Type: Piklist
