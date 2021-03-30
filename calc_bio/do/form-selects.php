@@ -19,7 +19,7 @@ function get_calc_potencias(){
 
     if ($results) {
       // output data of each row
-        $out = '<select id="potencias" class="wpcf7-form-control wpcf7-select" aria-required="true" aria-invalid="false">';
+        $out = '<select id="potencias" class="uk-select" aria-required="true" aria-invalid="false">';
         foreach($results as $result) {
           $out .='<option value="' . $result->id. '">  '. $result->potencia.' </option>';
         }
@@ -62,7 +62,7 @@ function get_calc_combustibles(){
 
     if ($results) {
       // output data of each row
-      $out = '<select id="combustibles" class="wpcf7-form-control wpcf7-select" aria-required="true" aria-invalid="false">';
+      $out = '<select id="combustibles" class="uk-select" aria-required="true" aria-invalid="false">';
 
         foreach($results as $result) {
           $out .='<option value="' . $result->id. '">  ' . $result->combustible. ' </option>';
@@ -106,7 +106,7 @@ function get_calc_calderas(){
 
   if ($results) {
     // output data of each row
-    $out = '<select id="calderas" class="wpcf7-form-control wpcf7-select" aria-required="true" aria-invalid="false">';
+    $out = '<select id="calderas" class="uk-select" aria-required="true" aria-invalid="false">';
       foreach($results as $result) {
         $out .="<option value='" . $result->etiqueta. "'>  " . $result->uso. " </option>";
       }
