@@ -7,7 +7,7 @@
  * Obtengo el listado de Potencias para el formulario de consulta
  * 
  * @return string HTML select 
- * 
+ * @todo Poner una clase de CSS (opcional) para un formato mas claro.
  */
 function get_calc_potencias(){
   global $wpdb;
@@ -49,7 +49,7 @@ function calc_potencias(){
  * Obtengo el listado de Combustibles para el formulario de consulta
  * 
  * @return string HTML select 
- * 
+ * @todo Poner una clase de CSS (opcional) para un formato mas claro.
  */
 function get_calc_combustibles(){
   global $wpdb;
@@ -92,7 +92,7 @@ function calc_combustibles(){
  * Obtengo el listado de Calderas para el formulario de consulta
  * 
  * @return string HTML select 
- * 
+ * @todo Poner una clase de CSS (opcional) para un formato mas claro.
  */
 function get_calc_calderas(){
 
