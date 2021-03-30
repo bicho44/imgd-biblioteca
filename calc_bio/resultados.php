@@ -94,7 +94,7 @@ $resultados .='
         <td> <b>Eficiencia</b></td>
         <td>'.getEficiencia($_GET["caldera"], $_GET["tipo_text"]).'</td>
         <td>'.getEficiencia($_GET["caldera"], "Pellet").'</td>
-        <td>'.getEficiencia($_GET["caldera"], "Astilla seca").'/td>
+        <td>'.getEficiencia($_GET["caldera"], "Astilla seca").'</td>
         <td>'.getEficiencia($_GET["caldera"], "Astilla h").'</td>
         <td>'.getEficiencia($_GET["caldera"], "Biomasa triturada").'</td>
     </tr>    
