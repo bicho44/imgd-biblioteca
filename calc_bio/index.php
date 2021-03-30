@@ -3,6 +3,16 @@ include_once 'do/form-selects.php';
 
 //error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
+/**
+* FshowCalculadora
+*
+* Muestra el formulario de la calculadora
+* @param $atts array Listado de atributos para el display del formulario
+* @param $atts 'url' Es el slug de la página a donde se van a mostrar los resultados
+* @return Formulario de búsqueda de contra los datos de manejo de BioMasa.
+*
+* @todo Dentro del array de atributos manejar las clases (CSS) del formato, para que sea mas portable y no dependa de un Theme en particular
+*/
 function fshowCalculadora($atts) {
         // echo "Array de atributos: <br />";        
         // print_r($atts);
