@@ -7,8 +7,16 @@
 **[ShowBook]**
  Shortcode para mostrar el link del libro de la biblioteca
 
+---
+
  # Calculadora de Biomasa
 Calculadora de BioMasa. Basada en una planilla de calculo provista por AchBiom, PHP y MySQLi
 
-**[ShowCalc]**
-Shortcode que mostrará la calculadora de BioMasa
+**[showCalculadora url="slug-url-pagina-de-resultados" ]**
+
+Shortcode que mostrará la calculadora de BioMasa.
+*url:* (opcional) Slug de la página que tiene el shortcode de los resultados. Verificar que este sea el correcto.
+
+**[displayResultados]**
+
+Shortcode que mostrará el resultados de la consulta realizada por el Formulario de la Calculadora. Insertalo en una página y obtener el slug ara colocarlo en el Shortcode de [showCalculadora].
