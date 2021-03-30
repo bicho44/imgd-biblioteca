@@ -32,7 +32,7 @@ function fshowCalculadora($atts) {
     $form .= '<form action="" method="get" class="wpcf7-form">';
 
         
-         $form .='<label class="uk-form-label">Tipo de Combustible a reemplazar: </label>
+         $form .='<label for="combustibles" class="uk-form-label">Tipo de Combustible a reemplazar: </label>
          <div class="uk-margin-small">'
             .get_calc_combustibles().
         '</div>';
@@ -42,31 +42,29 @@ function fshowCalculadora($atts) {
             .get_calc_combustibles().
             '</span></label>';*/
 
-        $form .='<label for="potencias">Potencia: <br />
-            <span class="wpcf7-form-control-wrap">'
+        $form .='<label for="potencias" class="uk-form-label">Potencia: </label>
+             <div class="uk-margin-small">'
             .get_calc_potencias().
-            '</span></label>';
+            '</div>';
 
 
-        $form .='<label for="caldera">Uso de la caldera:<br />
-                <span class="wpcf7-form-control-wrap">'
+        $form .='<label for="caldera" class="uk-form-label">Uso de la caldera:</label>
+                <div class="uk-margin-small">'
                 .get_calc_calderas().
-                '</span>
-            </label>';
+                '</div>';
 
 
-        $form .='<label for="precio">Precio de Combustible a reemplazar:<br />
-                    <span class="wpcf7-form-control-wrap">
-                        <input type="text" id="precio" class="wpcf7-form-control wpcf7-text" aria-required="true" aria-invalid="false"/>
-                    </span>
-                </label>';
+        $form .='<label for="precio" class="uk-form-label">Precio de Combustible a reemplazar:</label>
+                    <div class="uk-margin-small">
+                        <input type="text" id="precio" class="uk-input" aria-required="true" aria-invalid="false"/>
+                    </div>';
 
-        $form .='<label for="horas">Horas de uso anuales:<br />
-                <span class="wpcf7-form-control-wrap"> 
-                <input type="text" id="horas" class="wpcf7-form-control wpcf7-text"/>
-                </span></label>';
+        $form .='<label for="horas" class="uk-form-label">Horas de uso anuales:</label>
+                 <div class="uk-margin-small"> 
+                <input type="text" id="horas" class="uk-input" />
+                </div>';
 
-        $form .='<input type="button" class="wpcf7-form-control wpcf7-submit" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados(\''.$urlResultados.'\');"/>';
+        $form .='<input type="button" class="uk-button uk-button-primary" value="'._x('Calcular la BioMasa','imgd').'" onclick="goResultados(\''.$urlResultados.'\');"/>';
 
     $form .='</form>';
 
