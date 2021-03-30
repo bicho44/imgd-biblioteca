@@ -266,7 +266,7 @@ $resultados .='
     </tbody>
 </table>';
         } else {
-            $resultados = "<h1>No se puede haceder a los resultados sin antes hacer una consulta</h1>";
+            $resultados = "<h1>No se puede acceder a los resultados sin antes hacer una consulta</h1>";
             $resultados .="<p>Por favor diríjase a la Calculadora de Biomasa en el Menú de Proyectos</p>";
         }
 
