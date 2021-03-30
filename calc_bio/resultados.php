@@ -3,6 +3,7 @@
  include_once 'do/funciones-resultados.php';
 
 function fdisplayResultados (){
+    if($_GET['tipo']!=""){
     $resultados = '
 <input type="button" value="Regresar" onclick="  window.history.back();" />';
 
@@ -264,6 +265,11 @@ $resultados .='
     </tr> 
     </tbody>
 </table>';
+        } else {
+            $resultados = "<h1>No se puede haceder a los resultados sin antes hacer una consulta</h1>";
+            $resultados .="<p>Por favor diríjase a la Calculadora de Biomasa en el Menú de Proyectos</p>";
+        }
+
 
 return $resultados;
 
