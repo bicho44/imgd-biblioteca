@@ -31,10 +31,16 @@ function fshowCalculadora($atts) {
 
     $form .= '<form action="" method="get" class="wpcf7-form">';
 
-        $form .='<label for="combustibles"> Tipo de Combustible a reemplazar: <br />
+        
+         $form .='<label class="uk-form-label">Tipo de Combustible a reemplazar: </label>
+         <div class="uk-margin-small">'
+            .get_calc_combustibles().
+        '</div>';
+        
+       /* $form .='<label for="combustibles"> Tipo de Combustible a reemplazar: <br />
         <span class="wpcf7-form-control-wrap">'
             .get_calc_combustibles().
-            '</span></label>';
+            '</span></label>';*/
 
         $form .='<label for="potencias">Potencia: <br />
             <span class="wpcf7-form-control-wrap">'
