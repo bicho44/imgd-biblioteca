@@ -1,16 +1,25 @@
 <?php
 // include_once './config.php';
  include_once 'do/funciones-resultados.php';
-
+/**
+* fDisplayResultados
+*
+* @return Tabla de resultados de la búsqueda realizada por la calculadora de Biomasa.
+*
+* @todo agregar opción de clases CSS para formato de tabla y otros
+* @todo poner las opciones de traducción a todos lo textos.
+* @todo ver de que manera usar $_POST en lugar de $_GET, por una cuestión de seguridad.
+*/
 function fdisplayResultados (){
     if($_GET['tipo']!=""){
     $resultados = '
 <input type="button" value="Regresar" onclick="  window.history.back();" />';
 
 $resultados .='
-<h2>TECNOLOGIA ACTUAL</h2>
+<h3>TECNOLOGIA ACTUAL</h3>
   
-<table>
+<table class="uk-table uk-table-divider uk-table-hover uk-table-small">
+<tbody>
     <tr>
         <td>Tipo de Combustible a reemplazar</td>
         <td>
@@ -57,25 +66,26 @@ $resultados .='
             $resultados .= $_GET["horas"];
             $resultados .='</td>
     </tr>
+    </tbody>
 </table>
 
 
-<h2>
-    CUADRO COMPARATIVO </h2>
+<h3> CUADRO COMPARATIVO </h3>
 
-<table border="1">
+<table class="uk-table uk-table-divider uk-table-hover uk-table-small">
             <thead>
     <tr>
-        <th> <b>Combustible</b></th>
+        <th> Combustible</th>
         <th> '.$_GET["tipo_text"].'</th>
         <th> Pellet</th>
         <th> Astilla seca < 25%</th>
         <th> Astilla húmeda > 25%</th>
         <th> Biomasa triturada</th>
-    </tr>   </thead>
+    </tr>   
+    </thead>
     <tbody>
     <tr>
-        <td> <b>Potencia</b></td>
+        <td> Potencia</td>
         <td>'.$_GET["potencia_text"].'</td>
         <td>'.$_GET["potencia_text"].'</td>
         <td>'.$_GET["potencia_text"].'</td>
@@ -83,7 +93,7 @@ $resultados .='
         <td>'.$_GET["potencia_text"].'</td>
     </tr>    
     <tr>
-        <td> <b>Caldera</b></td>
+        <td> Caldera</td>
         <td>'.$_GET["caldera_text"].'</td>
         <td>'.$_GET["caldera_text"].'</td>
         <td>'.$_GET["caldera_text"].'</td>
@@ -91,7 +101,7 @@ $resultados .='
         <td>'.$_GET["caldera_text"].'</td>
     </tr>    
     <tr>
-        <td> <b>Eficiencia</b></td>
+        <td> Eficiencia</td>
         <td>'.getEficiencia($_GET["caldera"], $_GET["tipo_text"]).'</td>
         <td>'.getEficiencia($_GET["caldera"], "Pellet").'</td>
         <td>'.getEficiencia($_GET["caldera"], "Astilla seca").'</td>
@@ -99,7 +109,7 @@ $resultados .='
         <td>'.getEficiencia($_GET["caldera"], "Biomasa triturada").'</td>
     </tr>    
     <tr>
-        <td> <b>Ahorro en Combustible (CLP/año)</b></td>
+        <td> Ahorro en Combustible (CLP/año)</td>
         <td>'.
             $k1 = getK1($_GET["tipo_text"]);
             $k2 = $_GET["potencia"];
@@ -171,7 +181,7 @@ $resultados .='
 
 
     <tr>
-        <td> <b>Rango de Costos de Inversión (CLP)</b></td>
+        <td> Rango de Costos de Inversión (CLP)</td>
         <td> </td>
         <td>'. rangoCostoInversion($valor2); 
         $resultados .='</td>
@@ -185,7 +195,7 @@ $resultados .='
 
 
     <tr>
-        <td> <b>Período de recuperación de la Inversión (años)</b></td>
+        <td> Período de recuperación de la Inversión (años)</td>
         <td> </td>
         <td> ';
 
@@ -226,7 +236,7 @@ $resultados .='
         </td>
     </tr>
     <tr>
-        <td> <b>Reducción anual de Gases de Efecto Invernadero (t CO2eq/año)</b></td>
+        <td> Reducción anual de Gases de Efecto Invernadero (t CO2eq/año)</td>
         <td> </td>
         <td>';
             if(reduccion_gei($valor1, $valor2) < 0){
