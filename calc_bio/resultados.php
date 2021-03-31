@@ -13,7 +13,7 @@
 function fdisplayResultados (){
     if($_GET['tipo']!=""){
     $resultados = '
-<input type="button" value="Regresar" onclick="  window.history.back();" />';
+<input type="button" class="uk-button" value="Regresar" onclick="  window.history.back();" />';
 
 $resultados .='
 <h3>TECNOLOGIA ACTUAL</h3>
@@ -39,7 +39,7 @@ $resultados .='
         </td>
     </tr>
     <tr>
-        <td>Uso de la caldera</td>
+        <td>'.__("Uso de la caldera","imgd").'</td>
         <td><input type="hidden" id="caldera" value="'.$_GET["caldera"].'" />';
         
         $resultados .= $_GET["caldera_text"];
