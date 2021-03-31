@@ -66,7 +66,7 @@ function fshowCalculadora($atts) {
 
         $form .='<label for="precio" class="uk-form-label">Precio de Combustible a reemplazar:</label>
                     <div class="uk-margin-small">
-                        <input type="text" id="precio" class="uk-input" aria-required="true" aria-invalid="false" placeholder="Pesos Chilenos (CLP)"/>
+                        <input type="text" id="precio" class="uk-input" aria-required="true" aria-invalid="false" placeholder="'.__("Pesos Chilenos (CLP)", "imgd").'"/>
                     </div>';
 
         $form .='<label for="horas" class="uk-form-label">Horas de uso anuales:</label>
