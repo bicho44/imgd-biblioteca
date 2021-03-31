@@ -47,20 +47,20 @@ $resultados .='
         $resultados .='</td>
     </tr>
     <tr>
-        <td>Precio de Combustible a reemplazar</td>
+        <td>'.__("Precio de Combustible a reemplazar","imgd").'</td>
         <td>
             <input type="hidden" id="precio" value="'.$_GET["precio"].'" />';
 
             $resultados .=$_GET["precio"];
 
             if ($_GET["precio"] != "") {
-                $resultados .= 'CLP/lt sin IVA';
+                $resultados .= __(" CLP/lt sin IVA","imgd");
             }
             $resultados .='     
         </td>
     </tr>
     <tr>
-        <td>Horas de uso</td>
+        <td>'.__("Horas de Uso","imgd").'</td>
         <td>
             <input type="hidden" id="horas" value="'.$_GET["horas"].'" />';
             $resultados .= $_GET["horas"];
@@ -70,22 +70,22 @@ $resultados .='
 </table>
 
 
-<h3> CUADRO COMPARATIVO </h3>
+<h3>'.__("CUADRO COMPARATIVO","imgd").'</h3>
 
 <table class="uk-table uk-table-divider uk-table-hover uk-table-small">
             <thead>
     <tr>
-        <th> Combustible</th>
+        <th>'.__("Combustible","imgd").'</th>
         <th> '.$_GET["tipo_text"].'</th>
-        <th> Pellet</th>
-        <th> Astilla seca < 25%</th>
-        <th> Astilla húmeda > 25%</th>
-        <th> Biomasa triturada</th>
+        <th> '.__("Pellet","imgd").'</th>
+        <th> '.__("Astilla a Seca < 25%","imgd").'</th>
+        <th> '.__("Astilla húmeda > 25%","imgd").'</th>
+        <th> '.__("Biomasa triturada","imgd").'</th>
     </tr>   
     </thead>
     <tbody>
     <tr>
-        <td> Potencia</td>
+        <td> '.__("Potencia","imgd").'</td>
         <td>'.$_GET["potencia_text"].'</td>
         <td>'.$_GET["potencia_text"].'</td>
         <td>'.$_GET["potencia_text"].'</td>
@@ -93,7 +93,7 @@ $resultados .='
         <td>'.$_GET["potencia_text"].'</td>
     </tr>    
     <tr>
-        <td> Caldera</td>
+        <td> '.__("Caldera","imgd").'</td>
         <td>'.$_GET["caldera_text"].'</td>
         <td>'.$_GET["caldera_text"].'</td>
         <td>'.$_GET["caldera_text"].'</td>
@@ -101,15 +101,15 @@ $resultados .='
         <td>'.$_GET["caldera_text"].'</td>
     </tr>    
     <tr>
-        <td> Eficiencia</td>
+        <td> '.__("Eficiencia","imgd").'</td>
         <td>'.getEficiencia($_GET["caldera"], $_GET["tipo_text"]).'</td>
-        <td>'.getEficiencia($_GET["caldera"], "Pellet").'</td>
-        <td>'.getEficiencia($_GET["caldera"], "Astilla seca").'</td>
-        <td>'.getEficiencia($_GET["caldera"], "Astilla h").'</td>
-        <td>'.getEficiencia($_GET["caldera"], "Biomasa triturada").'</td>
+        <td>'.getEficiencia($_GET["caldera"], __("Pellet","imgd")).'</td>
+        <td>'.getEficiencia($_GET["caldera"], __("Astilla Seca","imgd")).'</td>
+        <td>'.getEficiencia($_GET["caldera"], __("Astilla h","imgd")).'</td>
+        <td>'.getEficiencia($_GET["caldera"], __("Biomasa triturada","imgd")).'</td>
     </tr>    
     <tr>
-        <td> Ahorro en Combustible (CLP/año)</td>
+        <td> '.__("Ahorro en Combustible (CLP/año)","imgd").'</td>
         <td>'.
             $k1 = getK1($_GET["tipo_text"]);
             $k2 = $_GET["potencia"];
@@ -124,7 +124,7 @@ $resultados .='
             $valor2 = "10" . $k2 . $k3;
             $aec2 = 0;
             if (ahorroEnCombustible($valor1, $valor2) < 0) {
-                $resultados .="NO APLICA";
+                $resultados .=__("NO APLICA","imgd");
                 $aec2 = -1;
             } else {
                 $resultados .=ahorroEnCombustible($valor1, $valor2);
@@ -139,7 +139,7 @@ $resultados .='
             $aec3 = 0;
 
             if (ahorroEnCombustible($valor1, $valor2) < 0) {
-                $resultados .="NO APLICA";
+                $resultados .=__("NO APLICA","imgd");
                 $aec3 = -1;
             } else {
                 $resultados .=ahorroEnCombustible($valor1, $valor2);
@@ -155,7 +155,7 @@ $resultados .='
             $aec4 = 0;
 
             if (ahorroEnCombustible($valor1, $valor2) < 0) {
-                $resultados .="NO APLICA";
+                $resultados .= __("NO APLICA","imgd");
                 $aec4 = -1;
             } else {
                 $resultados .=ahorroEnCombustible($valor1, $valor2);
@@ -170,10 +170,10 @@ $resultados .='
             $aec5 = 0;
 
             if (ahorroEnCombustible($valor1, $valor2) < 0) {
-                $resultados .= "NO APLICA";
+                $resultados .= __("NO APLICA","imgd");
                 $aec5 = -1;
             } else {
-                $resultados .=ahorroEnCombustible($valor1, $valor2);
+                $resultados .= ahorroEnCombustible($valor1, $valor2);
             }
             $resultados .='
         </td>
@@ -202,7 +202,7 @@ $resultados .='
             if($aec2 != -1){
                $resultados .=  recuperacion($valor2);
             }else{
-                $resultados .= "NO APLICA";
+                $resultados .=__("NO APLICA","imgd");
             }
             $resultados .='
         </td>
@@ -212,7 +212,7 @@ $resultados .='
             if($aec3 != -1){
                 $resultados .=  recuperacion($valor3);
             }else{
-                $resultados .= "NO APLICA";
+                $resultados .= __("NO APLICA","imgd");
             }
             $resultados .='
         </td>
@@ -222,7 +222,7 @@ $resultados .='
             if($aec4 != -1){
                 $resultados .= recuperacion($valor4);
             } else {
-                $resultados .= "NO APLICA";
+                $resultados .= __("NO APLICA","imgd");
             }
             $resultados .='</td>
         
@@ -230,7 +230,7 @@ $resultados .='
             if($aec5 != -1){
                 $resultados .=  recuperacion($valor5);
             }else{
-                $resultados .= "NO APLICA";
+                $resultados .= __("NO APLICA","imgd");
             }
             $resultados .='
         </td>
@@ -240,7 +240,7 @@ $resultados .='
         <td> </td>
         <td>';
             if(reduccion_gei($valor1, $valor2) < 0){
-                $resultados .= "NO APLICA";
+                $resultados .=__("NO APLICA","imgd");
             } else {
                 $resultados .= reduccion_gei($valor1, $valor2);
             }
@@ -257,7 +257,7 @@ $resultados .='
         </td>
         <td>';
             if(reduccion_gei($valor1, $valor4) < 0){
-                $resultados .= "NO APLICA";
+                $resultados .= __("NO APLICA","imgd");
             }
             else{
                 $resultados .= reduccion_gei($valor1, $valor4);
@@ -266,7 +266,7 @@ $resultados .='
         </td>
         <td>';
             if(reduccion_gei($valor1, $valor5) < 0){
-                $resultados .= "NO APLICA";
+                $resultados .= __("NO APLICA","imgd");
             } else {
                 $resultados .= reduccion_gei($valor1, $valor5);
             }
@@ -276,8 +276,8 @@ $resultados .='
     </tbody>
 </table>';
         } else {
-            $resultados = "<h1>No se puede acceder a los resultados sin antes hacer una consulta</h1>";
-            $resultados .="<p>Por favor diríjase a la Calculadora de Biomasa en el Menú de Proyectos</p>";
+            $resultados = "<h1>".__("No se puede acceder a los resultados sin antes hacer una consulta.","imgd")."</h1>" ;
+            $resultados .= "<p>".__("Por favor diríjase a la Calculadora de Biomasa en el Menú de Proyectos","imgd")."</p>" ;
         }
 
 
